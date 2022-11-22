@@ -1,0 +1,132 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  </head>
+  <body id="bg">
+    <header>
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+              <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img"></a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="sass.html">Accueil</a></li>
+                <li><a href="sass.html">Projets</a></li>
+                <li><a class="waves-effect waves-light btn">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li> 
+          </ul>
+    </header>
+
+    <section id="intro" class="container">
+      <div class="grey-text text-lighten-1">
+        <h1>Léon et Matthieu à Guardia</h1>
+        <p>
+          Depuis le début de nos études de CyberSécurité à Guardia Cybersecurity School nous avons entrepris 5 projets,
+          dans différents groupes. Mais nous sommes au sein du même groupe depuis le projet 4. N'hésitez pas à aller voir
+           nos projets dans la section Projets ou vous amuser avec le terminal ci-dessous.
+        </p>
+      </div>
+    </section>
+    <section id="terminal-section" class="container">
+      <div class="term">
+        <div id="terminal">
+          <a id="before"></a>
+        </div>
+        <div id="command" onclick="$('texter').focus();">
+          <textarea
+            type="text"
+            id="texter"
+            onkeyup="typeIt(this, event)"
+            onkeydown="typeIt(this, event); 
+                       moveIt(this.value.length, event)"
+            onkeypress="typeIt(this, event);"
+            spellcheck="false"
+            autofocus
+          ></textarea>
+          <div id="liner">
+            <span id="typer"></span><b class="cursor" id="cursor">█</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <div class="grey-text text-lighten-1">
+        <h2>Projets</h2>
+        <p>
+          Pendant ces 5 projets nous avons obtenus divers compétences, 
+          et avons appris les bases de plusieurs langages de programmation. ainsi qu'une meilleur communication personnelle
+        </p>
+      </div>
+      <div class="carousel">
+        <a class="carousel-item" href="#one!">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Projet 1</span>
+              <p>Dans ce projet nous avons appris à nous exprimer à l'oral ainsi qu'à préparer un powerpoint bien construit et propre.</p>
+            </div>
+          </div>
+        </a>
+        <a class="carousel-item" href="#two!">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Projet 2</span>
+              <p>Dans ce projet nous avons appris à créer un serveur ssh en local ou sur le web. à partir d'un 
+                terminale ubuntu, de mysql, de php et de logiciel comme roundcube, ispconfig</p>
+            </div>
+          </div>
+        </a>
+        <a class="carousel-item" href="#three!">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">projet 3</span>
+              <p>Dans ce projet nous avons appris à créer des algorithme sur larp ou bien python. Nous avons coder un morpion et un pierre, feuille, ciseau
+                avec VIM sous Linux.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a class="carousel-item" href="#four!">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Projet 4</span>
+              <p>Dans ce Projet nous avons appris à créer un site Web de A à Z, en HTML et CSS. Nous avons tout 
+                de même utiliser du JavaScript afin d'implanter un mode nuit/jour sur le site.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a class="carousel-item" href="five">      
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Projet 5</span>
+              <p>Dans ce projet nous avon appris à créer un site Web, en HTML, CSS et JavaScript,
+                 majoritairement grâce à Materialize</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+                      
+    </section>
+    <script type="text/javascript" src="/js/imports/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/imports/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/imports/jquery.particleground.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/caret.js"></script>
+    <script src="/js/commands.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

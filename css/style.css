@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #1c2e42;
+  background-size: cover;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+body header nav .nav-wrapper {
+  background-color: #e0eeff !important;
+}
+body #intro {
+  margin-top: 10rem;
+}
+body #intro .container img {
+  width: 1%;
+}
+body #terminal-section {
+  margin-top: 2rem;
+}
+body #terminal-section .term {
+  background-color: #1c2e42;
+  max-height: 20em;
+  /* Cursor Start */
+  /* Cursor End */
+}
+body #terminal-section .term ::-moz-selection {
+  color: #211830;
+  background-color: #519975;
+}
+body #terminal-section .term ::selection {
+  color: #211830;
+  background-color: #519975;
+}
+body #terminal-section .term ::-moz-selection {
+  color: #211830;
+  background-color: #519975;
+}
+body #terminal-section .term #terminal {
+  color: rgba(255, 255, 255, 0.226);
+}
+body #terminal-section .term textarea {
+  position: absolute;
+  right: 1000px;
+  color: transparent;
+  text-decoration: none;
+  height: 3em;
+  border: none;
+  outline: none;
+  resize: none;
+}
+body #terminal-section .term textarea:focus {
+  outline: none;
+  text-decoration: none;
+}
+body #terminal-section .term b {
+  font-weight: bold;
+  text-decoration: underline;
+}
+body #terminal-section .term .cursor {
+  font-size: 12px;
+  color: #73ABAD;
+  background-color: #73ABAD;
+  position: relative;
+  opacity: 1;
+  height: 1.5em;
+  width: 10px;
+  max-width: 10px;
+  transform: translateY(4px);
+  overflow: hidden;
+  text-indent: -5px;
+  display: inline-block;
+  text-decoration: blink;
+  -webkit-animation: blinker 1s linear infinite;
+          animation: blinker 1s linear infinite;
+}
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+body #terminal-section .term #command {
+  cursor: text;
+  height: 50px;
+  color: #73ABAD;
+}
+body #terminal-section .term #liner {
+  line-height: 1.3em;
+  margin-top: -2px;
+  -webkit-animation: show 0.5s ease forwards;
+          animation: show 0.5s ease forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  opacity: 0;
+}
+body #terminal-section .term #liner::before {
+  color: #519975;
+  content: "term:~$";
+}
+body #terminal-section .term #liner.password::before {
+  content: "Password:";
+}
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body #terminal-section .term p {
+  display: block;
+  line-height: 1.3em;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0.05em;
+  -webkit-animation: typing 0.5s steps(30, end);
+          animation: typing 0.5s steps(30, end);
+}
+body #terminal-section .term .no-animation {
+  -webkit-animation: typing 0 steps(30, end);
+          animation: typing 0 steps(30, end);
+}
+body #terminal-section .term .margin {
+  margin-left: 20px;
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+body #terminal-section .term .index {
+  color: #DCDCCC;
+}
+body #terminal-section .term .color2 {
+  color: #B89076;
+}
+body #terminal-section .term .command {
+  color: #73ABAD;
+  text-shadow: 0 0 5px #73ABAD;
+}
+body #terminal-section .term .error {
+  color: #B89076;
+}
+body #terminal-section .term .white {
+  color: #fff;
+}
+body #terminal-section .term .inherit,
+body #terminal-section .term a {
+  color: #9C8394;
+}
+body #terminal-section .term a {
+  text-decoration: inherit;
+}
+body #terminal-section .term a:hover {
+  background: #73ABAD;
+  color: #211830;
+}
+body #terminal-section .term a:focus {
+  outline: 0;
+}
+body #projects {
+  margin-top: 8rem;
+}/*# sourceMappingURL=style.css.map */
