@@ -3,10 +3,10 @@
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/85b199d966.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   </head>
   <body id="bg">
     <header>
@@ -15,118 +15,175 @@
               <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img"></a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Accueil</a></li>
-                <li><a href="sass.html">Projets</a></li>
+                <li><a href='#intro'>Accueil</a></li>
+                <li><a href='#projects'>Projets</a></li>
                 <li><a class="waves-effect waves-light btn">Contact</a></li>
               </ul>
             </div>
           </nav>
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li> 
+            <li><a href="sass.html">Accueil</a></li>
+            <li><a href="badges.html">Projets</a></li>
+            <li><a href="collapsible.html">Contact</a></li>
           </ul>
     </header>
-
-    <section id="intro" class="container">
-      <div class="grey-text text-lighten-1">
-        <h1>Léon et Matthieu à Guardia</h1>
-        <p>
-          Depuis le début de nos études de CyberSécurité à Guardia Cybersecurity School nous avons entrepris 5 projets,
-          dans différents groupes. Mais nous sommes au sein du même groupe depuis le projet 4. N'hésitez pas à aller voir
-           nos projets dans la section Projets ou vous amuser avec le terminal ci-dessous.
-        </p>
-      </div>
-    </section>
-    <section id="terminal-section" class="container">
-      <div class="term">
-        <div id="terminal">
-          <a id="before"></a>
+    <main>
+      <section id="intro" class="container">
+        <div class="grey-text text-lighten-1 text">
+          <h1>Léon et Matthieu à Guardia</h1>
+          <p>
+            Depuis le début de nos études de CyberSécurité à Guardia Cybersecurity School nous avons entrepris 5 projets,
+            dans différents groupes. Mais nous sommes au sein du même groupe depuis le projet 4. N'hésitez pas à aller voir
+            nos projets dans la section Projets ou vous amuser avec le terminal ci-dessous.
+          </p>
         </div>
-        <div id="command" onclick="$('texter').focus();">
-          <textarea
-            type="text"
-            id="texter"
-            onkeyup="typeIt(this, event)"
-            onkeydown="typeIt(this, event); 
-                       moveIt(this.value.length, event)"
-            onkeypress="typeIt(this, event);"
-            spellcheck="false"
-            autofocus
-          ></textarea>
-          <div id="liner">
-            <span id="typer"></span><b class="cursor" id="cursor">█</b>
+      </section>
+      <section id="terminal-section" class="container">
+        <div class="term">
+          <div id="terminal">
+            <a id="before"></a>
+          </div>
+          <div id="command" onclick="$('texter').focus();">
+            <textarea
+              type="text"
+              id="texter"
+              onkeyup="typeIt(this, event)"
+              onkeydown="typeIt(this, event); 
+                        moveIt(this.value.length, event)"
+              onkeypress="typeIt(this, event);"
+              spellcheck="false"
+              autofocus
+            ></textarea>
+            <div id="liner">
+              <span id="typer"></span><b class="cursor" id="cursor">█</b>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="container">
+        <div class="grey-text text-lighten-1 text">
+          <h2>Projets</h2>
+          <p>
+            Pendant ces 5 projets nous avons obtenus divers compétences, 
+            et avons appris les bases de plusieurs langages de programmation. ainsi qu'une meilleur communication personnelle
+          </p>
+        </div>
+        <div class="carousel">
+          <a class="carousel-item">
+            <div class="carousel-card">
+              <h3>Projet 1</h3>
+              <p>
+                Dans ce projet nous avons appris à nous exprimer à l'oral ainsi qu'à préparer un 
+                    powerpoint bien construit et propre.
+              </p>
+              <button class="waves-effect waves-light">Click here</button>
+            </div>
+          </a>
+          <a class="carousel-item">
+            <div class="carousel-card">
+              <h3>Projet 2</h3>
+              <p>
+                Dans ce projet nous avons appris à créer un serveur ssh en local ou sur le web. à partir d'un 
+                    terminale ubuntu, de mysql, de php et de logiciel comme roundcube, ispconfig
+              </p>
+              <button class="waves-effect waves-light">Click here</button>
+            </div>
+          </a>
+          <a class="carousel-item">
+            <div class="carousel-card">
+              <h3>Projet 3</h3>
+              <p>
+                Dans ce projet nous avons appris à créer des algorithme sur larp ou bien python. Nous avons coder un morpion et un pierre, feuille, ciseau
+                    avec VIM sous Linux.
+              </p>
+              <button class="waves-effect waves-light">Click here</button>
+            </div>
+          </a>
+          <a class="carousel-item">
+            <div class="carousel-card">
+              <h3>Projet 4</h3>
+              <p>
+                Dans ce Projet nous avons appris à créer un site Web de A à Z, en HTML et CSS. Nous avons tout 
+                    de même utiliser du JavaScript afin d'implanter un mode nuit/jour sur le site.
+              </p>
+              <button class="waves-effect waves-light">Click here</button>
+            </div>
+          </a>
+          <a class="carousel-item">      
+            <div class="carousel-card">
+              <h3>Projet 5</h3>
+              <p>
+                Dans ce projet nous avon appris à créer un site Web, en HTML, CSS et JavaScript,
+                    majoritairement grâce à Materialize.
+              </p>
+              <button class="waves-effect waves-light">Click here</button>
+            </div>
+          </a>
+        </div>         
+      </section>
+      <section id="contact" class="container">
+        <div class="row">
+          <div class="col s12 m6 l3 offset-l3">
+            <div class="card-ph">
+              <div class="card-ph-content">
+                <img src="https://www.onecloudsystems.com/wp-content/uploads/2017/01/avatar-round.png">
+                <h3>Matthieu le singe</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
+                </p>
+                <ul>
+                  <li><a href="https://www.facebook.com/"><i class="fa-brands fa-discord"></i></a></li>
+                  <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 l3">
+            <div class="card-ph">
+              <div class="card-ph-content">
+                <img src="https://www.onecloudsystems.com/wp-content/uploads/2017/01/avatar-round.png">
+                <h3>Matthieu le singe</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  
+    <footer class="page-footer grey darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">A propos de nous</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, nostrum non dignissimos 
+              similique omnis reiciendis
+              , aut facere suscipit quae dolorum minus culpa molestias officiis velit ducimus veritatis quidem dolorem maxime.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Lien Github Léon</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Lien Github Matthieu</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Lien Guardia</a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+      <div class="footer-copyright">
 
-    <section id="projects" class="container">
-      <div class="grey-text text-lighten-1">
-        <h2>Projets</h2>
-        <p>
-          Pendant ces 5 projets nous avons obtenus divers compétences, 
-          et avons appris les bases de plusieurs langages de programmation. ainsi qu'une meilleur communication personnelle
-        </p>
       </div>
-      <div class="carousel">
-        <a class="carousel-item" href="#one!">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Projet 1</span>
-              <p>Dans ce projet nous avons appris à nous exprimer à l'oral ainsi qu'à préparer un powerpoint bien construit et propre.</p>
-            </div>
-          </div>
-        </a>
-        <a class="carousel-item" href="#two!">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Projet 2</span>
-              <p>Dans ce projet nous avons appris à créer un serveur ssh en local ou sur le web. à partir d'un 
-                terminale ubuntu, de mysql, de php et de logiciel comme roundcube, ispconfig</p>
-            </div>
-          </div>
-        </a>
-        <a class="carousel-item" href="#three!">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">projet 3</span>
-              <p>Dans ce projet nous avons appris à créer des algorithme sur larp ou bien python. Nous avons coder un morpion et un pierre, feuille, ciseau
-                avec VIM sous Linux.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a class="carousel-item" href="#four!">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Projet 4</span>
-              <p>Dans ce Projet nous avons appris à créer un site Web de A à Z, en HTML et CSS. Nous avons tout 
-                de même utiliser du JavaScript afin d'implanter un mode nuit/jour sur le site.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a class="carousel-item" href="five">      
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Projet 5</span>
-              <p>Dans ce projet nous avon appris à créer un site Web, en HTML, CSS et JavaScript,
-                 majoritairement grâce à Materialize</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-                      
-    </section>
+    </footer>
     <script type="text/javascript" src="/js/imports/jquery.min.js"></script>
     <script type="text/javascript" src="/js/imports/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/imports/jquery.particleground.min.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/js/caret.js"></script>
-    <script src="/js/commands.js"></script>
-    <script src="/js/main.js"></script>
   </body>
 </html>

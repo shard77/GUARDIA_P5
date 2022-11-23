@@ -64,14 +64,17 @@ nav {
     display: inline-block;
     font-size: $navbar-brand-font-size;
     padding: 0;
+    top:0.6rem;
 
     img {
       max-width: 1.5em;
+      margin-left: 1rem;
     }
 
     &.center {
       left: 50%;
       transform: translateX(-50%);
+      margin-left: 0;
     }
 
     @media #{$medium-and-down} {

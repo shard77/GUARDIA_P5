@@ -4123,13 +4123,16 @@ nav .brand-logo {
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
+  top: 0.6rem;
 }
 nav .brand-logo img {
   max-width: 1.5em;
+  margin-left: 1rem;
 }
 nav .brand-logo.center {
   left: 50%;
   transform: translateX(-50%);
+  margin-left: 0;
 }
 @media only screen and (max-width : 992px) {
   nav .brand-logo {
@@ -7133,6 +7136,7 @@ input[type=range]::-ms-thumb {
   font-size: 15px;
 }
 .carousel .carousel-item {
+  cursor: pointer;
   visibility: hidden;
   width: 200px;
   height: 200px;

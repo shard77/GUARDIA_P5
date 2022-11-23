@@ -6,14 +6,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-body header nav .nav-wrapper {
-  background-color: #e0eeff !important;
-}
-body #intro {
-  margin-top: 10rem;
-}
-body #intro .container img {
-  width: 1%;
+body #intro .text p {
+  font-size: 1.5em;
 }
 body #terminal-section {
   margin-top: 2rem;
@@ -187,4 +181,83 @@ body #terminal-section .term a:focus {
 }
 body #projects {
   margin-top: 8rem;
+}
+body #projects .text p {
+  font-size: 1.5em;
+}
+body #projects .carousel .carousel-item {
+  display: flex;
+  background: rgb(60, 87, 112);
+  width: 100%;
+  height: 100%;
+  max-width: 20em;
+  max-height: 22em;
+  border-radius: 1em;
+}
+body #projects .carousel .carousel-item .carousel-card {
+  color: rgb(255, 255, 255);
+  margin: 0 1rem;
+}
+body #projects .carousel .carousel-item .carousel-card button {
+  border: none;
+  width: 100%;
+  height: 100%;
+  max-width: 7em;
+  max-height: 2em;
+  border-radius: 5px;
+  background: orange;
+  cursor: pointer;
+}
+body #contact {
+  margin-top: 8rem;
+}
+body #contact .row .col .card-ph {
+  background: rgb(34, 34, 34);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  width: 20em;
+  height: 25em;
+  border-radius: 1em;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051), 0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09), 0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129), 0px 0px 109px rgba(0, 0, 0, 0.18);
+}
+body #contact .row .col .card-ph .card-ph-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body #contact .row .col .card-ph .card-ph-content h3 {
+  font-size: 1.5em;
+  color: white;
+}
+body #contact .row .col .card-ph .card-ph-content p {
+  font-size: 1em;
+  color: white;
+}
+body #contact .row .col .card-ph .card-ph-content img {
+  width: 100%;
+  height: 100%;
+  max-width: 6em;
+}
+body #contact .row .col .card-ph .card-ph-content ul {
+  z-index: -1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body #contact .row .col .card-ph .card-ph-content ul li {
+  margin: 0 1rem;
+}
+body #contact .row .col .card-ph .card-ph-content ul li a {
+  color: rgb(103, 197, 221);
+  text-decoration: none;
+  font-size: 1.5em;
+  text-shadow: 0 0 3px rgb(103, 197, 221);
 }/*# sourceMappingURL=style.css.map */
