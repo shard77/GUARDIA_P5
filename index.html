@@ -2,7 +2,6 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://kit.fontawesome.com/85b199d966.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="/css/style.css">
@@ -44,12 +43,10 @@
             <a id="before"></a>
           </div>
           <div id="command" onclick="$('texter').focus();">
-            <textarea
-              type="text"
+            <textarea type="text"
               id="texter"
               onkeyup="typeIt(this, event)"
-              onkeydown="typeIt(this, event); 
-                        moveIt(this.value.length, event)"
+              onkeydown="typeIt(this, event); moveIt(this.value.length, event)"
               onkeypress="typeIt(this, event);"
               spellcheck="false"
               autofocus
@@ -150,6 +147,11 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                   Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
                 </p>
+                <ul>
+                  <li><a href="https://www.facebook.com/"><i class="fa-brands fa-discord"></i></a></li>
+                  <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -182,8 +184,11 @@
 
       </div>
     </footer>
-    <script type="text/javascript" src="/js/imports/jquery.min.js"></script>
     <script type="text/javascript" src="/js/imports/materialize.min.js"></script>
-    <script src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/utils/common.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/cursor.js"></script>
+    <script type="text/javascript" src="/js/commands.js"></script>
+    <script type="text/javascript" src="/js/terminal.js"></script>
   </body>
 </html>

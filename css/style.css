@@ -15,7 +15,6 @@ body #terminal-section {
 body #terminal-section .term {
   background-color: #1c2e42;
   max-height: 20em;
-  /* Cursor Start */
   /* Cursor End */
 }
 body #terminal-section .term ::-moz-selection {
@@ -33,7 +32,7 @@ body #terminal-section .term ::-moz-selection {
 body #terminal-section .term #terminal {
   color: rgba(255, 255, 255, 0.226);
 }
-body #terminal-section .term textarea {
+body #terminal-section .term #command textarea {
   position: absolute;
   right: 1000px;
   color: transparent;
@@ -43,15 +42,18 @@ body #terminal-section .term textarea {
   outline: none;
   resize: none;
 }
-body #terminal-section .term textarea:focus {
+body #terminal-section .term #command textarea:focus {
   outline: none;
   text-decoration: none;
 }
-body #terminal-section .term b {
+body #terminal-section .term #liner {
+  /* Cursor Start */
+}
+body #terminal-section .term #liner b {
   font-weight: bold;
   text-decoration: underline;
 }
-body #terminal-section .term .cursor {
+body #terminal-section .term #liner .cursor {
   font-size: 12px;
   color: #73ABAD;
   background-color: #73ABAD;

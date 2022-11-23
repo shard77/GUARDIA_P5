@@ -1,8 +1,8 @@
-var before = document.getElementById("before");
-var liner = document.getElementById("liner");
-var command = document.getElementById("typer"); 
-var textarea = document.getElementById("texter"); 
-var terminal = document.getElementById("terminal");
+var before = $("before");
+var liner = $("liner");
+var command = $("typer"); 
+var textarea = $("texter"); 
+var terminal = $("terminal");
 
 var git = 0;
 var pw = false;
@@ -86,7 +86,7 @@ function commander(cmd) {
     case "clear":
       setTimeout(function() {
         terminal.innerHTML = '<a id="before"></a>';
-        before = document.getElementById("before");
+        before = $("before");
       }, 1);
       break;
     default:

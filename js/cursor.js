@@ -1,15 +1,3 @@
-function $(elid) {
-    return document.getElementById(elid);
-  }
-  
-var cursor;
-window.onload = init;
-
-function init() {
-  cursor = $("cursor");
-  cursor.style.left = "0px";
-}
-
 function nl2br(txt) {
   return txt.replace(/\n/g, '');
 }
