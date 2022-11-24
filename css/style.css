@@ -6,16 +6,22 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-body #intro .text p {
+body iframe {
+  display: block; /* iframes are inline by default */
+  background: #000;
+  border: none; /* Reset default border */
+  height: 100vh; /* Viewport-relative units */
+  width: 100vw;
+}
+body .text p {
   font-size: 1.5em;
 }
 body #terminal-section {
   margin-top: 2rem;
 }
 body #terminal-section .term {
+  overflow-anchor: none !important;
   background-color: #1c2e42;
-  max-height: 20em;
-  /* Cursor End */
 }
 body #terminal-section .term ::-moz-selection {
   color: #211830;
@@ -46,15 +52,12 @@ body #terminal-section .term #command textarea:focus {
   outline: none;
   text-decoration: none;
 }
-body #terminal-section .term #liner {
-  /* Cursor Start */
-}
 body #terminal-section .term #liner b {
   font-weight: bold;
   text-decoration: underline;
 }
 body #terminal-section .term #liner .cursor {
-  font-size: 12px;
+  font-size: 0.8em;
   color: #73ABAD;
   background-color: #73ABAD;
   position: relative;
@@ -70,16 +73,6 @@ body #terminal-section .term #liner .cursor {
   -webkit-animation: blinker 1s linear infinite;
           animation: blinker 1s linear infinite;
 }
-@-webkit-keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
 body #terminal-section .term #command {
   cursor: text;
   height: 50px;
@@ -93,33 +86,19 @@ body #terminal-section .term #liner {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
   opacity: 0;
+  font-size: 1.3em;
+}
+body #terminal-section .term #liner .password::before {
+  content: "Password:";
 }
 body #terminal-section .term #liner::before {
   color: #519975;
   content: "term:~$";
 }
-body #terminal-section .term #liner.password::before {
-  content: "Password:";
-}
-@-webkit-keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 body #terminal-section .term p {
   display: block;
   line-height: 1.3em;
+  font-size: 1.3em;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -134,22 +113,6 @@ body #terminal-section .term .no-animation {
 }
 body #terminal-section .term .margin {
   margin-left: 20px;
-}
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 }
 body #terminal-section .term .index {
   color: #DCDCCC;
@@ -181,6 +144,48 @@ body #terminal-section .term a:hover {
 body #terminal-section .term a:focus {
   outline: 0;
 }
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 body #projects {
   margin-top: 8rem;
 }
@@ -193,7 +198,7 @@ body #projects .carousel .carousel-item {
   width: 100%;
   height: 100%;
   max-width: 20em;
-  max-height: 22em;
+  max-height: 20em;
   border-radius: 1em;
 }
 body #projects .carousel .carousel-item .carousel-card {
@@ -207,11 +212,24 @@ body #projects .carousel .carousel-item .carousel-card button {
   max-width: 7em;
   max-height: 2em;
   border-radius: 5px;
-  background: orange;
+  background: rgb(150, 198, 212);
   cursor: pointer;
 }
 body #contact {
   margin-top: 8rem;
+}
+body #contact .text {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+body #contact .text a {
+  cursor: pointer;
+}
+body #contact .text p {
+  font-size: 1.5em;
+}
+body #contact .row {
+  margin-right: 6.5rem;
 }
 body #contact .row .col .card-ph {
   background: rgb(34, 34, 34);
@@ -237,6 +255,7 @@ body #contact .row .col .card-ph .card-ph-content h3 {
 body #contact .row .col .card-ph .card-ph-content p {
   font-size: 1em;
   color: white;
+  margin-bottom: 3rem;
 }
 body #contact .row .col .card-ph .card-ph-content img {
   width: 100%;
@@ -261,5 +280,110 @@ body #contact .row .col .card-ph .card-ph-content ul li a {
   color: rgb(103, 197, 221);
   text-decoration: none;
   font-size: 1.5em;
-  text-shadow: 0 0 3px rgb(103, 197, 221);
+}
+body #contact-form {
+  z-index: 1000;
+  display: none;
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  margin-left: -250px; /* Negative half of width. */
+  background: rgb(34, 34, 34);
+  border-radius: 15px;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+body #contact-form ul {
+  display: inline-block;
+}
+body #contact-form ul li {
+  list-style: none;
+}
+body #contact-form h2 {
+  text-transform: uppercase;
+  font-size: 2em;
+  width: 200px;
+  text-align: center;
+  margin: 30px 100px;
+}
+body #contact-form .js {
+  position: absolute;
+  top: 3em;
+  display: none;
+  left: 0;
+  right: 0;
+}
+body #contact-form input {
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: rgba(128, 128, 128, 0.363) 2px solid;
+  margin: 1em 40px;
+  width: 300px;
+  padding: 10px;
+  background: none;
+  display: block;
+  color: white;
+}
+body #contact-form input:focus {
+  border: none;
+}
+body #contact-form textarea {
+  text-transform: uppercase;
+  border: 0;
+  width: 320px;
+  height: 100px;
+  display: block;
+  margin-left: 40px;
+  background: none;
+  padding: 10px;
+  border: rgba(128, 128, 128, 0.363) 2px solid;
+  color: white;
+  resize: none;
+}
+body #contact-form #submit {
+  border-radius: 0.8rem;
+  width: 320px;
+  border: rgba(128, 128, 128, 0.363) 2px solid;
+  color: white;
+}
+body #contact-form #submit:hover {
+  cursor: pointer;
+}
+body #contact-form .close {
+  position: absolute;
+  right: 20px;
+  top: -10px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 3em;
+  color: #ee4444;
+}
+@media (max-width: 765px) {
+  body #contact-form textarea {
+    width: 250px;
+  }
+  body #contact-form input {
+    width: 250px;
+  }
+}
+body .projet {
+  margin-top: 5rem;
+}
+body .projet .text {
+  text-align: justify;
+}
+body .projet .row {
+  margin-top: 3rem;
+}
+body .projet .row .col img {
+  width: 40em;
+  border-radius: 2em;
+}
+body .projet .row .col p {
+  max-height: 15em;
+  width: 30em;
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */

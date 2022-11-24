@@ -6,37 +6,59 @@
     <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portfolio</title>
   </head>
-  <body id="bg">
-    <header>
-        <nav>
-            <div class="nav-wrapper grey darken-4">
-              <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img"></a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href='#intro'>Accueil</a></li>
-                <li><a href='#projects'>Projets</a></li>
-                <li><a class="waves-effect waves-light btn">Contact</a></li>
-              </ul>
-            </div>
-          </nav>
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Accueil</a></li>
-            <li><a href="badges.html">Projets</a></li>
-            <li><a href="collapsible.html">Contact</a></li>
+  <body id="bd">
+    <header class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img"></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href='#'>Accueil</a></li>
+            <li><a href='#projects'>Projets</a></li>
+            <li><a class="waves-effect waves-light btn" id="c-btn" onclick="divShow()">Contact</a></li>
           </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href='#'>Accueil</a></li>
+        <li><a href='#projects'>Projets</a></li>
+        <li><a class="waves-effect waves-light btn" id="c-btn" onclick="divShow()">Contact</a></li>
+      </ul>
     </header>
+    <div id="contact-form">
+      <form action="#">
+        <ul>
+          <h2 class="grey-text text-lighten-1">Contact</h2>
+          <li>
+            <input type="text" name="name" id="name" placeholder="Nom Prenom">
+            <input type="email" name="email" id="email" placeholder="Email">
+          </li>
+          <li>
+            <textarea name="message" id="message" placeholder="Message"></textarea>
+          </li>
+          <li>
+            <input type="submit" value="Send message" class="form-btn" id="submit">
+          </li>
+          <li>
+            <button type="button" class="btn cancel waves-effect waves-light" onclick="divHide()">Close</button>
+          </li>
+        </ul>
+      </form>
+    </div>
     <main>
       <section id="intro" class="container">
         <div class="grey-text text-lighten-1 text">
-          <h1>Léon et Matthieu à Guardia</h1>
-          <p>
+          <h1 id="tle">Léon et Matthieu à Guardia</h1>
+          <p id="ple">
             Depuis le début de nos études de CyberSécurité à Guardia Cybersecurity School nous avons entrepris 5 projets,
             dans différents groupes. Mais nous sommes au sein du même groupe depuis le projet 4. N'hésitez pas à aller voir
             nos projets dans la section Projets ou vous amuser avec le terminal ci-dessous.
           </p>
         </div>
       </section>
+
       <section id="terminal-section" class="container">
         <div class="term">
           <div id="terminal">
@@ -63,7 +85,7 @@
           <h2>Projets</h2>
           <p>
             Pendant ces 5 projets nous avons obtenus divers compétences, 
-            et avons appris les bases de plusieurs langages de programmation. ainsi qu'une meilleur communication personnelle
+            et avons appris les bases de plusieurs langages de programmation.
           </p>
         </div>
         <div class="carousel">
@@ -72,9 +94,9 @@
               <h3>Projet 1</h3>
               <p>
                 Dans ce projet nous avons appris à nous exprimer à l'oral ainsi qu'à préparer un 
-                    powerpoint bien construit et propre.
+                powerpoint bien construit et propre.
               </p>
-              <button class="waves-effect waves-light">Click here</button>
+              <button class="waves-effect waves-light" onClick="window.location.href='/pages/projet1.html'">Voir le Projet</button>
             </div>
           </a>
           <a class="carousel-item">
@@ -82,9 +104,9 @@
               <h3>Projet 2</h3>
               <p>
                 Dans ce projet nous avons appris à créer un serveur ssh en local ou sur le web. à partir d'un 
-                    terminale ubuntu, de mysql, de php et de logiciel comme roundcube, ispconfig
+                terminale ubuntu, de mysql, de php et de logiciel comme roundcube, ispconfig
               </p>
-              <button class="waves-effect waves-light">Click here</button>
+              <button class="waves-effect waves-light" onClick="window.location.href='/pages/projet2.html'">Voir le Projet</button>
             </div>
           </a>
           <a class="carousel-item">
@@ -92,9 +114,9 @@
               <h3>Projet 3</h3>
               <p>
                 Dans ce projet nous avons appris à créer des algorithme sur larp ou bien python. Nous avons coder un morpion et un pierre, feuille, ciseau
-                    avec VIM sous Linux.
+                avec VIM sous Linux.
               </p>
-              <button class="waves-effect waves-light">Click here</button>
+              <button class="waves-effect waves-light" onClick="window.location.href='/pages/projet3.html'">Voir le Projet</button>
             </div>
           </a>
           <a class="carousel-item">
@@ -102,9 +124,9 @@
               <h3>Projet 4</h3>
               <p>
                 Dans ce Projet nous avons appris à créer un site Web de A à Z, en HTML et CSS. Nous avons tout 
-                    de même utiliser du JavaScript afin d'implanter un mode nuit/jour sur le site.
+                de même utiliser du JavaScript afin d'implanter un mode nuit/jour sur le site.
               </p>
-              <button class="waves-effect waves-light">Click here</button>
+              <button class="waves-effect waves-light" onClick="window.location.href='/pages/projet4.html'">Voir le Projet</button>
             </div>
           </a>
           <a class="carousel-item">      
@@ -112,23 +134,28 @@
               <h3>Projet 5</h3>
               <p>
                 Dans ce projet nous avon appris à créer un site Web, en HTML, CSS et JavaScript,
-                    majoritairement grâce à Materialize.
+                majoritairement grâce à Materialize.
               </p>
-              <button class="waves-effect waves-light">Click here</button>
+              <button class="waves-effect waves-light" onClick="window.location.href='/pages/projet5.html'">Voir le Projet</button>
             </div>
           </a>
         </div>         
       </section>
       <section id="contact" class="container">
+        <div class="grey-text text-lighten-1 text">
+          <h3 onclick="changeTitle()">Cartes de Contact</h3>
+          <p>
+            Voici nos cartes de contact, vous pouvez également nous contacter via le formulaire de <a onclick="divShow()">Contact</a>.
+          </p>
+        </div>
         <div class="row">
           <div class="col s12 m6 l3 offset-l3">
             <div class="card-ph">
               <div class="card-ph-content">
                 <img src="https://www.onecloudsystems.com/wp-content/uploads/2017/01/avatar-round.png">
-                <h3>Matthieu le singe</h3>
+                <h3>Léon Gessner</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                  Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
+                  Etudiant à Guardia en première année de CyberSécurité.
                 </p>
                 <ul>
                   <li><a href="https://www.facebook.com/"><i class="fa-brands fa-discord"></i></a></li>
@@ -138,14 +165,13 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l3">
+          <div class="col s12 m6 l3 offset-l1">
             <div class="card-ph">
               <div class="card-ph-content">
                 <img src="https://www.onecloudsystems.com/wp-content/uploads/2017/01/avatar-round.png">
-                <h3>Matthieu le singe</h3>
+                <h3>Matthieu Guiot</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                  Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
+                  Etudiant à Guardia en première année de CyberSécurité.
                 </p>
                 <ul>
                   <li><a href="https://www.facebook.com/"><i class="fa-brands fa-discord"></i></a></li>
@@ -158,37 +184,30 @@
         </div>
       </section>
     </main>
-
-  
     <footer class="page-footer grey darken-4">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">A propos de nous</h5>
-            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, nostrum non dignissimos 
-              similique omnis reiciendis
-              , aut facere suscipit quae dolorum minus culpa molestias officiis velit ducimus veritatis quidem dolorem maxime.
+            <h4 class="white-text">A propos de nous</h4>
+            <p class="grey-text text-lighten-4">
+              N'hésitez pas à nous suivre sur Github afin de suivre l'évolution de nos projets. Vous pouvez aussi vous 
+              renseigner sur notre école de CyberSécurité.
             </p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
+            <h4 class="white-text">Links</h4>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Lien Github Léon</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Lien Github Matthieu</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Lien Guardia</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/shard77">Lien Github Léon</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Defint4">Lien Github Matthieu</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://guardia.school/">Lien Guardia</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-
-      </div>
+      <div class="footer-copyright"></div>
     </footer>
     <script type="text/javascript" src="/js/imports/materialize.min.js"></script>
     <script type="text/javascript" src="/js/utils/common.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript" src="/js/cursor.js"></script>
-    <script type="text/javascript" src="/js/commands.js"></script>
     <script type="text/javascript" src="/js/terminal.js"></script>
   </body>
 </html>

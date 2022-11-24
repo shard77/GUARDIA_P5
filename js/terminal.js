@@ -1,8 +1,8 @@
-var before = $("before");
-var liner = $("liner");
-var command = $("typer"); 
-var textarea = $("texter"); 
-var terminal = $("terminal");
+var before = document.getElementById("before");
+var liner = document.getElementById("liner");
+var command = document.getElementById("typer"); 
+var textarea = document.getElementById("texter"); 
+var terminal = document.getElementById("terminal");
 
 var git = 0;
 var pw = false;
@@ -23,22 +23,26 @@ function enterKey(e) {
   if (e.keyCode == 181) {
     document.location.reload(true);
   }
+
   if (pw) {
     let et = "*";
     let w = textarea.value.length;
     command.innerHTML = et.repeat(w);
+
     if (textarea.value === password) {
       pwd = true;
     }
+
     if (pwd && e.keyCode == 13) {
       loopLines(secret, "color2 margin", 120);
       command.innerHTML = "";
       textarea.value = "";
       pwd = false;
       pw = false;
+      localStorage.setItem('admin', true);
       liner.classList.remove("password");
     } else if (e.keyCode == 13) {
-      addLine("Wrong password", "error", 0);
+      addLine("Mauvais Mot de Passe", "error", 0);
       command.innerHTML = "";
       textarea.value = "";
       pw = false;
@@ -71,13 +75,43 @@ function enterKey(e) {
 }
 
 function commander(cmd) {
+  let adm = localStorage.getItem('admin');
   switch (cmd.toLowerCase()) {
+
+    case "hack":
+      if (adm === "true") {
+        addLine("Hack en cours...", "color2 margin", 0);
+        hackSite();
+        break;
+      } else {
+        addLine("Vous n'avez pas les droits d'administrateur", "error", 0);
+        break;
+      }
+    
+    case "ip":
+      if (adm === "true") {
+        addLine("Votre IP est 98.22.432.11", "color2 margin", 0);
+        break;
+      } else {
+        addLine("Vous n'avez pas les droits d'administrateur", "error", 0);
+        break;
+      }
+
     case "help":
-      loopLines(help, "color2 margin", 80);
-      break;
+      if (adm === "true") {
+        loopLines(hiddenHelp, "color2 margin", 80);
+        break;
+      } else {
+        loopLines(help, "color2 margin", 80);
+        break;
+      }
     case "nothing":
         loopLines(nothing, "color2 margin", 80);
         break;
+    case "password":
+      loopLines(passwordText, "color2 margin", 80);
+      pw = true;
+      break;
     case "history":
       addLine("<br>", "", 0);
       loopLines(commands, "color2", 80);
@@ -86,7 +120,7 @@ function commander(cmd) {
     case "clear":
       setTimeout(function() {
         terminal.innerHTML = '<a id="before"></a>';
-        before = $("before");
+        before = document.getElementById("before");
       }, 1);
       break;
     default:
@@ -115,10 +149,7 @@ function addLine(text, style, time) {
     var next = document.createElement("p");
     next.innerHTML = t;
     next.className = style;
-
     before.parentNode.insertBefore(next, before);
-
-    window.scrollTo(0, document.body.offsetHeight);
   }, time);
 }
 
@@ -127,3 +158,5 @@ function loopLines(name, style, time) {
     addLine(item, style, index * time);
   });
 }
+
+

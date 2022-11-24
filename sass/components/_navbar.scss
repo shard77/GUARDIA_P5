@@ -16,7 +16,12 @@ nav {
 
   color: $navbar-font-color;
   @extend .z-depth-1;
-  background-color: $primary-color;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.63);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.4px);
+  -webkit-backdrop-filter: blur(12.4px);
+  border: 1px solid rgba(0, 0, 0, 0.363);
   width: 100%;
   height: $navbar-height-mobile;
   line-height: $navbar-line-height-mobile;
@@ -64,7 +69,7 @@ nav {
     display: inline-block;
     font-size: $navbar-brand-font-size;
     padding: 0;
-    top:0.6rem;
+    top:0.5rem;
 
     img {
       max-width: 1.5em;
