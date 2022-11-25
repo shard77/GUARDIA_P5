@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen"/>
     <link type="text/css" rel="stylesheet" href="/css/style.css">
-
     <title>Projet 1</title>
 </head>
 <body>
-    <header>
+    <header class="navbar-fixed">
         <nav>
-          <div class="nav-wrapper grey darken-4">
-            <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img"></a>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img" alt="terminal-logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href='/index.html'>Accueil</a></li>
+              <li><a href='../index.html'>Accueil</a></li>
             </ul>
           </div>
         </nav>
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href='/index.html'>Accueil</a></li>
-          </ul>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href='../index.html'>Accueil</a></li>
+        </ul>
     </header>
     <main class="container projet">
         <div class="grey-text text-lighten-1 text">
@@ -33,10 +32,10 @@
             </p>
         </div>
         <div class="row grey-text text-lighten-1 text">
-            <div class="col s12 m6 l3">
-                <img src="/images/image1.webp">
+            <div class="col s12 m6 l3 offset-m3">
+                <img src="/images/net.webp">
             </div>
-            <div class="col s12 m6 l3 offset-l3">
+            <div class="col s12 m6 l3 offset-l3 offset-m3 offset-s1">
                 <p>
                     Grâce à ce projet nous somme capable de
                     parler aisément en public,soutenir et faire ressortir les différents 
@@ -45,7 +44,6 @@
             </div>
         </div>
     </main>
-
     <script type="text/javascript" src="/js/imports/materialize.min.js"></script>
 </body>
 </html>

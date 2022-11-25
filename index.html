@@ -1,9 +1,9 @@
  <!DOCTYPE html>
-<html>
+<html lang="FR">
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/85b199d966.js" crossorigin="anonymous"></script>
-    <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen"/>
     <link type="text/css" rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Portfolio</title>
@@ -12,42 +12,44 @@
     <header class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img"></a>
+          <a href="#!" class="brand-logo"><img src="/images/logoterm.png" class="responsive-img" alt="terminal-logo"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href='#'>Accueil</a></li>
             <li><a href='#projects'>Projets</a></li>
-            <li><a class="waves-effect waves-light btn" id="c-btn" onclick="divShow()">Contact</a></li>
+            <li><a class="waves-effect waves-light btn" onclick="divShow()">Contact</a></li>
           </ul>
         </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
         <li><a href='#'>Accueil</a></li>
         <li><a href='#projects'>Projets</a></li>
-        <li><a class="waves-effect waves-light btn" id="c-btn" onclick="divShow()">Contact</a></li>
+        <li><a class="waves-effect waves-light btn" onclick="divShow()">Contact</a></li>
       </ul>
     </header>
-    <div id="contact-form">
-      <form action="#">
-        <ul>
-          <h2 class="grey-text text-lighten-1">Contact</h2>
-          <li>
-            <input type="text" name="name" id="name" placeholder="Nom Prenom">
-            <input type="email" name="email" id="email" placeholder="Email">
-          </li>
-          <li>
-            <textarea name="message" id="message" placeholder="Message"></textarea>
-          </li>
-          <li>
-            <input type="submit" value="Send message" class="form-btn" id="submit">
-          </li>
-          <li>
-            <button type="button" class="btn cancel waves-effect waves-light" onclick="divHide()">Close</button>
-          </li>
-        </ul>
-      </form>
-    </div>
     <main>
+      <div id="contact-container">
+        <div class="contact-form">
+          <form action="#">
+            <h2 class="grey-text text-lighten-1">Contact</h2>
+            <ul>
+              <li>
+                <input type="text" name="name" id="name" placeholder="Nom Prenom">
+                <input type="email" name="email" id="email" placeholder="Email">
+              </li>
+              <li>
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+              </li>
+              <li>
+                <input type="submit" value="Send message" class="form-btn" id="submit">
+              </li>
+              <li>
+                <button type="button" class="btn cancel waves-effect waves-light" onclick="divHide()">Close</button>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
       <section id="intro" class="container">
         <div class="grey-text text-lighten-1 text">
           <h1 id="tle">Léon et Matthieu à Guardia</h1>
@@ -58,14 +60,13 @@
           </p>
         </div>
       </section>
-
       <section id="terminal-section" class="container">
         <div class="term">
           <div id="terminal">
             <a id="before"></a>
           </div>
           <div id="command" onclick="$('texter').focus();">
-            <textarea type="text"
+            <textarea
               id="texter"
               onkeyup="typeIt(this, event)"
               onkeydown="typeIt(this, event); moveIt(this.value.length, event)"
@@ -79,7 +80,6 @@
           </div>
         </div>
       </section>
-
       <section id="projects" class="container">
         <div class="grey-text text-lighten-1 text">
           <h2>Projets</h2>
@@ -104,7 +104,7 @@
               <h3>Projet 2</h3>
               <p>
                 Dans ce projet nous avons appris à créer un serveur ssh en local ou sur le web. à partir d'un 
-                terminale ubuntu, de mysql, de php et de logiciel comme roundcube, ispconfig
+                terminal ubuntu, de mysql, de php et de logiciel comme roundcube et ispconfig.
               </p>
               <button class="waves-effect waves-light" onClick="window.location.href='/pages/projet2.html'">Voir le Projet</button>
             </div>
@@ -149,10 +149,10 @@
           </p>
         </div>
         <div class="row">
-          <div class="col s12 m6 l3 offset-l3">
+          <div class="col s12 m6 l2 offset-l3 offset-m4 offset-s3">
             <div class="card-ph">
               <div class="card-ph-content">
-                <img src="https://www.onecloudsystems.com/wp-content/uploads/2017/01/avatar-round.png">
+                <img src="/images/avatar-round.png" alt="avatar round image">
                 <h3>Léon Gessner</h3>
                 <p>
                   Etudiant à Guardia en première année de CyberSécurité.
@@ -165,10 +165,10 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l3 offset-l1">
+          <div class="col s12 m6 l2 offset-l2 offset-m4 offset-s3">
             <div class="card-ph">
               <div class="card-ph-content">
-                <img src="https://www.onecloudsystems.com/wp-content/uploads/2017/01/avatar-round.png">
+                <img src="/images/avatar-round.png" alt="avatar round image">
                 <h3>Matthieu Guiot</h3>
                 <p>
                   Etudiant à Guardia en première année de CyberSécurité.
@@ -206,8 +206,9 @@
       </div>
       <div class="footer-copyright"></div>
     </footer>
-    <script type="text/javascript" src="/js/imports/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/utils/common.js"></script>
-    <script type="text/javascript" src="/js/terminal.js"></script>
+    <script src="/js/imports/materialize.min.js"></script>
+    <script src="/js/imports/tilt.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/terminal.js"></script>
   </body>
 </html>

@@ -77,17 +77,6 @@ function enterKey(e) {
 function commander(cmd) {
   let adm = localStorage.getItem('admin');
   switch (cmd.toLowerCase()) {
-
-    case "hack":
-      if (adm === "true") {
-        addLine("Hack en cours...", "color2 margin", 0);
-        hackSite();
-        break;
-      } else {
-        addLine("Vous n'avez pas les droits d'administrateur", "error", 0);
-        break;
-      }
-    
     case "ip":
       if (adm === "true") {
         addLine("Votre IP est 98.22.432.11", "color2 margin", 0);
@@ -105,24 +94,40 @@ function commander(cmd) {
         loopLines(help, "color2 margin", 80);
         break;
       }
+      
     case "nothing":
+      if (adm === "true") {
+        addLine("Cette commande ne fait rien.. Ça sert à rien d'essayer..", "color2 margin", 0);
+        setTimeout(function() {
+          addLine(".. ou bien?", "color2 margin", 0);
+        }, 1000);
+        setTimeout(function() {
+          hackSite();
+        }, 3000);
+        break;
+      } else {
         loopLines(nothing, "color2 margin", 80);
         break;
+      }
+
     case "password":
       loopLines(passwordText, "color2 margin", 80);
       pw = true;
       break;
+
     case "history":
       addLine("<br>", "", 0);
       loopLines(commands, "color2", 80);
       addLine("<br>", "command", 80 * commands.length + 50);
       break;
+
     case "clear":
       setTimeout(function() {
         terminal.innerHTML = '<a id="before"></a>';
         before = document.getElementById("before");
       }, 1);
       break;
+
     default:
       addLine("<span class=\"inherit\">Commande inconnue. Tape <span class=\"command\">'help' </span>pour la liste des commandes.</span>", "error", 100);
       break;

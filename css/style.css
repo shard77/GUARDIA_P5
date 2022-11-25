@@ -1,44 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
-body {
+.filtered {
+  -moz-filter: grayscale(100%);
+  filter: gray; /* IE6-9 */
+  filter: grayscale(100%);
+}
+
+html {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+html ::-webkit-scrollbar {
+  width: 5px;
+}
+html ::-webkit-scrollbar-track {
+  background: #0d223a;
+}
+html ::-webkit-scrollbar-thumb {
+  background: rgb(71, 114, 141);
+  border-radius: 5px;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: rgb(7, 178, 251);
+}
+html body {
   font-family: "DM Sans", sans-serif;
   background: #1c2e42;
   background-size: cover;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
-body iframe {
-  display: block; /* iframes are inline by default */
+html body iframe {
+  display: block;
   background: #000;
-  border: none; /* Reset default border */
-  height: 100vh; /* Viewport-relative units */
+  border: none;
+  height: 100vh;
   width: 100vw;
 }
-body .text p {
+html body .text p {
   font-size: 1.5em;
 }
-body #terminal-section {
+html body .btn {
+  background: rgb(61, 122, 219) !important;
+}
+html body #terminal-section {
   margin-top: 2rem;
 }
-body #terminal-section .term {
+html body #terminal-section .term {
   overflow-anchor: none !important;
   background-color: #1c2e42;
 }
-body #terminal-section .term ::-moz-selection {
+html body #terminal-section .term ::-moz-selection {
   color: #211830;
   background-color: #519975;
 }
-body #terminal-section .term ::selection {
+html body #terminal-section .term ::selection {
   color: #211830;
   background-color: #519975;
 }
-body #terminal-section .term ::-moz-selection {
+html body #terminal-section .term ::-moz-selection {
   color: #211830;
   background-color: #519975;
 }
-body #terminal-section .term #terminal {
+html body #terminal-section .term #terminal {
   color: rgba(255, 255, 255, 0.226);
 }
-body #terminal-section .term #command textarea {
+html body #terminal-section .term #command textarea {
   position: absolute;
   right: 1000px;
   color: transparent;
@@ -48,15 +73,15 @@ body #terminal-section .term #command textarea {
   outline: none;
   resize: none;
 }
-body #terminal-section .term #command textarea:focus {
+html body #terminal-section .term #command textarea:focus {
   outline: none;
   text-decoration: none;
 }
-body #terminal-section .term #liner b {
+html body #terminal-section .term #liner b {
   font-weight: bold;
   text-decoration: underline;
 }
-body #terminal-section .term #liner .cursor {
+html body #terminal-section .term #liner .cursor {
   font-size: 0.8em;
   color: #73ABAD;
   background-color: #73ABAD;
@@ -73,12 +98,12 @@ body #terminal-section .term #liner .cursor {
   -webkit-animation: blinker 1s linear infinite;
           animation: blinker 1s linear infinite;
 }
-body #terminal-section .term #command {
+html body #terminal-section .term #command {
   cursor: text;
   height: 50px;
   color: #73ABAD;
 }
-body #terminal-section .term #liner {
+html body #terminal-section .term #liner {
   line-height: 1.3em;
   margin-top: -2px;
   -webkit-animation: show 0.5s ease forwards;
@@ -88,14 +113,14 @@ body #terminal-section .term #liner {
   opacity: 0;
   font-size: 1.3em;
 }
-body #terminal-section .term #liner .password::before {
+html body #terminal-section .term #liner .password::before {
   content: "Password:";
 }
-body #terminal-section .term #liner::before {
+html body #terminal-section .term #liner::before {
   color: #519975;
   content: "term:~$";
 }
-body #terminal-section .term p {
+html body #terminal-section .term p {
   display: block;
   line-height: 1.3em;
   font-size: 1.3em;
@@ -107,41 +132,41 @@ body #terminal-section .term p {
   -webkit-animation: typing 0.5s steps(30, end);
           animation: typing 0.5s steps(30, end);
 }
-body #terminal-section .term .no-animation {
+html body #terminal-section .term .no-animation {
   -webkit-animation: typing 0 steps(30, end);
           animation: typing 0 steps(30, end);
 }
-body #terminal-section .term .margin {
+html body #terminal-section .term .margin {
   margin-left: 20px;
 }
-body #terminal-section .term .index {
+html body #terminal-section .term .index {
   color: #DCDCCC;
 }
-body #terminal-section .term .color2 {
+html body #terminal-section .term .color2 {
   color: #B89076;
 }
-body #terminal-section .term .command {
+html body #terminal-section .term .command {
   color: #73ABAD;
   text-shadow: 0 0 5px #73ABAD;
 }
-body #terminal-section .term .error {
+html body #terminal-section .term .error {
   color: #B89076;
 }
-body #terminal-section .term .white {
+html body #terminal-section .term .white {
   color: #fff;
 }
-body #terminal-section .term .inherit,
-body #terminal-section .term a {
+html body #terminal-section .term .inherit,
+html body #terminal-section .term a {
   color: #9C8394;
 }
-body #terminal-section .term a {
+html body #terminal-section .term a {
   text-decoration: inherit;
 }
-body #terminal-section .term a:hover {
+html body #terminal-section .term a:hover {
   background: #73ABAD;
   color: #211830;
 }
-body #terminal-section .term a:focus {
+html body #terminal-section .term a:focus {
   outline: 0;
 }
 @-webkit-keyframes typing {
@@ -186,13 +211,13 @@ body #terminal-section .term a:focus {
     opacity: 0;
   }
 }
-body #projects {
+html body #projects {
   margin-top: 8rem;
 }
-body #projects .text p {
+html body #projects .text p {
   font-size: 1.5em;
 }
-body #projects .carousel .carousel-item {
+html body #projects .carousel .carousel-item {
   display: flex;
   background: rgb(60, 87, 112);
   width: 100%;
@@ -201,11 +226,11 @@ body #projects .carousel .carousel-item {
   max-height: 20em;
   border-radius: 1em;
 }
-body #projects .carousel .carousel-item .carousel-card {
+html body #projects .carousel .carousel-item .carousel-card {
   color: rgb(255, 255, 255);
   margin: 0 1rem;
 }
-body #projects .carousel .carousel-item .carousel-card button {
+html body #projects .carousel .carousel-item .carousel-card button {
   border: none;
   width: 100%;
   height: 100%;
@@ -215,23 +240,51 @@ body #projects .carousel .carousel-item .carousel-card button {
   background: rgb(150, 198, 212);
   cursor: pointer;
 }
-body #contact {
+html body #contact {
   margin-top: 8rem;
+  margin-bottom: 8rem;
 }
-body #contact .text {
+html body #contact .text {
   text-align: center;
   margin-bottom: 4rem;
 }
-body #contact .text a {
+html body #contact .text a {
   cursor: pointer;
 }
-body #contact .text p {
+html body #contact .text p {
   font-size: 1.5em;
 }
-body #contact .row {
-  margin-right: 6.5rem;
+@media (min-width: 997px) {
+  html body #contact .row {
+    margin-right: 6rem;
+  }
 }
-body #contact .row .col .card-ph {
+@media (max-width: 820px) {
+  html body #contact .row {
+    margin-right: 4rem;
+  }
+}
+@media (max-width: 414px) {
+  html body #contact .row {
+    margin-right: 13rem;
+  }
+}
+@media (max-width: 390px) {
+  html body #contact .row {
+    margin-right: 14rem;
+  }
+}
+@media (max-width: 375px) {
+  html body #contact .row {
+    margin-right: 15rem;
+  }
+}
+@media (max-width: 992px) {
+  html body #contact .row .col {
+    margin-bottom: 3rem;
+  }
+}
+html body #contact .row .col .card-ph {
   background: rgb(34, 34, 34);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -240,7 +293,7 @@ body #contact .row .col .card-ph {
   border-radius: 1em;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.051), 0px 0px 7.2px rgba(0, 0, 0, 0.073), 0px 0px 13.6px rgba(0, 0, 0, 0.09), 0px 0px 24.3px rgba(0, 0, 0, 0.107), 0px 0px 45.5px rgba(0, 0, 0, 0.129), 0px 0px 109px rgba(0, 0, 0, 0.18);
 }
-body #contact .row .col .card-ph .card-ph-content {
+html body #contact .row .col .card-ph .card-ph-content {
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -248,21 +301,21 @@ body #contact .row .col .card-ph .card-ph-content {
   align-items: center;
   text-align: center;
 }
-body #contact .row .col .card-ph .card-ph-content h3 {
+html body #contact .row .col .card-ph .card-ph-content h3 {
   font-size: 1.5em;
   color: white;
 }
-body #contact .row .col .card-ph .card-ph-content p {
+html body #contact .row .col .card-ph .card-ph-content p {
   font-size: 1em;
   color: white;
   margin-bottom: 3rem;
 }
-body #contact .row .col .card-ph .card-ph-content img {
+html body #contact .row .col .card-ph .card-ph-content img {
   width: 100%;
   height: 100%;
   max-width: 6em;
 }
-body #contact .row .col .card-ph .card-ph-content ul {
+html body #contact .row .col .card-ph .card-ph-content ul {
   z-index: -1;
   list-style: none;
   padding: 0;
@@ -273,17 +326,30 @@ body #contact .row .col .card-ph .card-ph-content ul {
   align-items: center;
   text-align: center;
 }
-body #contact .row .col .card-ph .card-ph-content ul li {
+html body #contact .row .col .card-ph .card-ph-content ul li {
   margin: 0 1rem;
 }
-body #contact .row .col .card-ph .card-ph-content ul li a {
+html body #contact .row .col .card-ph .card-ph-content ul li a {
   color: rgb(103, 197, 221);
   text-decoration: none;
   font-size: 1.5em;
+  cursor: pointer !important;
 }
-body #contact-form {
-  z-index: 1000;
+html body #contact-container {
+  position: fixed;
   display: none;
+  background: rgba(0, 0, 0, 0.63);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+html body #contact-container .contact-form {
+  z-index: 1000;
   text-align: center;
   justify-content: center;
   position: fixed;
@@ -296,27 +362,20 @@ body #contact-form {
   max-width: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-body #contact-form ul {
+html body #contact-container .contact-form ul {
   display: inline-block;
 }
-body #contact-form ul li {
+html body #contact-container .contact-form ul li {
   list-style: none;
 }
-body #contact-form h2 {
+html body #contact-container .contact-form h2 {
   text-transform: uppercase;
   font-size: 2em;
   width: 200px;
   text-align: center;
   margin: 30px 100px;
 }
-body #contact-form .js {
-  position: absolute;
-  top: 3em;
-  display: none;
-  left: 0;
-  right: 0;
-}
-body #contact-form input {
+html body #contact-container .contact-form input {
   text-transform: uppercase;
   border-radius: 5px;
   border: rgba(128, 128, 128, 0.363) 2px solid;
@@ -327,10 +386,11 @@ body #contact-form input {
   display: block;
   color: white;
 }
-body #contact-form input:focus {
+html body #contact-container .contact-form input:focus {
   border: none;
+  outline: 2px solid rgb(94, 175, 238);
 }
-body #contact-form textarea {
+html body #contact-container .contact-form textarea {
   text-transform: uppercase;
   border: 0;
   width: 320px;
@@ -340,19 +400,24 @@ body #contact-form textarea {
   background: none;
   padding: 10px;
   border: rgba(128, 128, 128, 0.363) 2px solid;
+  border-radius: 5px;
   color: white;
   resize: none;
 }
-body #contact-form #submit {
-  border-radius: 0.8rem;
+html body #contact-container .contact-form textarea:focus {
+  border: none;
+  outline: 2px solid rgb(94, 175, 238);
+}
+html body #contact-container .contact-form #submit {
+  border-radius: 5px;
   width: 320px;
   border: rgba(128, 128, 128, 0.363) 2px solid;
   color: white;
 }
-body #contact-form #submit:hover {
+html body #contact-container .contact-form #submit:hover {
   cursor: pointer;
 }
-body #contact-form .close {
+html body #contact-container .contact-form .close {
   position: absolute;
   right: 20px;
   top: -10px;
@@ -362,27 +427,72 @@ body #contact-form .close {
   color: #ee4444;
 }
 @media (max-width: 765px) {
-  body #contact-form textarea {
+  html body #contact-container .contact-form textarea {
     width: 250px;
   }
-  body #contact-form input {
+  html body #contact-container .contact-form input {
     width: 250px;
   }
 }
-body .projet {
+html body .projet {
   margin-top: 5rem;
 }
-body .projet .text {
-  text-align: justify;
+html body .projet .text {
+  text-align: center;
 }
-body .projet .row {
+@media (max-width: 1730px) {
+  html body .projet .text {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 1518px) {
+  html body .projet .text {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 1354px) {
+  html body .projet .text {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 1134px) {
+  html body .projet .text {
+    font-size: 0.6em;
+  }
+}
+html body .projet .row {
   margin-top: 3rem;
 }
-body .projet .row .col img {
+html body .projet .row .col img {
   width: 40em;
   border-radius: 2em;
 }
-body .projet .row .col p {
+@media (min-width: 997px) {
+  html body .projet .row .col img {
+    margin-right: 6rem;
+  }
+}
+@media (max-width: 820px) {
+  html body .projet .row .col img {
+    margin-right: 4rem;
+  }
+}
+@media (max-width: 414px) {
+  html body .projet .row .col img {
+    max-width: 27em;
+  }
+}
+@media (max-width: 390px) {
+  html body .projet .row .col img {
+    margin-right: 14rem;
+  }
+}
+@media (max-width: 375px) {
+  html body .projet .row .col img {
+    margin-right: 15rem;
+  }
+}
+html body .projet .row .col p {
   max-height: 15em;
   width: 30em;
   overflow: hidden;

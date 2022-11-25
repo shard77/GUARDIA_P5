@@ -2577,7 +2577,7 @@ a {
 }
 
 /* 2dp elevation modified*/
-.z-depth-1, .sidenav, .collapsible, .btn-floating, .btn, .btn-small, .btn-large, .card, .card-panel, nav {
+.z-depth-1, .sidenav, .btn-floating, .btn, .btn-small, .btn-large, nav {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -3230,6 +3230,12 @@ input[type=range] + .thumb {
 
 .no-padding {
   padding: 0 !important;
+}
+
+/* This is needed for some mobile phones to display the Google Icon font properly */
+.material-icons {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga";
 }
 
 .container {
@@ -4021,7 +4027,6 @@ nav {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.4px);
   -webkit-backdrop-filter: blur(12.4px);
-  border: 1px solid rgba(0, 0, 0, 0.363);
   width: 100%;
   height: 56px;
   line-height: 56px;
@@ -4404,172 +4409,37 @@ small {
   }
 }
 
-.scale-transition {
-  transition: transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
-}
-.scale-transition.scale-out {
-  transform: scale(0);
-  transition: transform 0.2s !important;
-}
-.scale-transition.scale-in {
-  transform: scale(1);
-}
-
-.card-panel {
-  transition: box-shadow 0.25s;
-  padding: 24px;
-  margin: 0.5rem 0 1rem 0;
+.material-tooltip {
+  padding: 10px 8px;
+  font-size: 1rem;
+  z-index: 2000;
+  background-color: transparent;
   border-radius: 2px;
-  background-color: #fff;
+  color: #fff;
+  min-height: 36px;
+  line-height: 120%;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  max-width: calc(100% - 4px);
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  visibility: hidden;
+  background-color: #323232;
 }
 
-.card {
-  position: relative;
-  margin: 0.5rem 0 1rem 0;
-  background-color: #fff;
-  transition: box-shadow 0.25s;
-  border-radius: 10px;
-}
-.card .card-title {
-  font-size: 24px;
-  font-weight: 300;
-}
-.card .card-title.activator {
-  cursor: pointer;
-}
-.card.small, .card.medium, .card.large {
-  position: relative;
-}
-.card.small .card-image, .card.medium .card-image, .card.large .card-image {
-  max-height: 60%;
-  overflow: hidden;
-}
-.card.small .card-image + .card-content, .card.medium .card-image + .card-content, .card.large .card-image + .card-content {
-  max-height: 40%;
-}
-.card.small .card-content, .card.medium .card-content, .card.large .card-content {
-  max-height: 100%;
-  overflow: hidden;
-}
-.card.small .card-action, .card.medium .card-action, .card.large .card-action {
+.backdrop {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.card.small {
-  height: 300px;
-}
-.card.medium {
-  height: 400px;
-}
-.card.large {
-  height: 500px;
-}
-.card.horizontal {
-  display: flex;
-}
-.card.horizontal.small .card-image, .card.horizontal.medium .card-image, .card.horizontal.large .card-image {
-  height: 100%;
-  max-height: none;
-  overflow: visible;
-}
-.card.horizontal.small .card-image img, .card.horizontal.medium .card-image img, .card.horizontal.large .card-image img {
-  height: 100%;
-}
-.card.horizontal .card-image {
-  max-width: 50%;
-}
-.card.horizontal .card-image img {
-  border-radius: 2px 0 0 2px;
-  max-width: 100%;
-  width: auto;
-}
-.card.horizontal .card-stacked {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  position: relative;
-}
-.card.horizontal .card-stacked .card-content {
-  flex-grow: 1;
-}
-.card.sticky-action .card-action {
-  z-index: 2;
-}
-.card.sticky-action .card-reveal {
-  z-index: 1;
-  padding-bottom: 64px;
-}
-.card .card-image {
-  position: relative;
-}
-.card .card-image img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-.card .card-image .card-title {
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-width: 100%;
-  padding: 24px;
-}
-.card .card-content {
-  padding: 24px;
-  border-radius: 0 0 2px 2px;
-}
-.card .card-content p {
-  margin: 0;
-}
-.card .card-content .card-title {
-  display: block;
-  line-height: 32px;
-  margin-bottom: 8px;
-}
-.card .card-content .card-title i {
-  line-height: 32px;
-}
-.card .card-action {
-  background-color: inherit;
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  position: relative;
-  padding: 16px 24px;
-}
-.card .card-action:last-child {
-  border-radius: 0 0 10px 10px;
-}
-.card .card-action a:not(.btn):not(.btn-small):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #ffab40;
-  margin-right: 24px;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-}
-.card .card-action a:not(.btn):not(.btn-small):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-  color: #ffd8a6;
-}
-.card .card-reveal {
-  padding: 24px;
-  position: absolute;
-  background-color: #fff;
-  width: 100%;
-  overflow-y: auto;
-  left: 0;
-  top: 100%;
-  height: 100%;
-  z-index: 3;
-  display: none;
-}
-.card .card-reveal .card-title {
-  cursor: pointer;
-  display: block;
+  opacity: 0;
+  height: 7px;
+  width: 14px;
+  border-radius: 0 0 50% 50%;
+  background-color: #323232;
+  z-index: -1;
+  transform-origin: 50% 0%;
+  visibility: hidden;
 }
 
 .btn, .btn-small, .btn-large,
@@ -5070,93 +4940,6 @@ button.btn-floating {
   max-height: 45%;
   border-radius: 0;
   will-change: bottom, opacity;
-}
-
-.collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  margin: 0.5rem 0 1rem 0;
-}
-
-.collapsible-header {
-  display: flex;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  line-height: 1.5;
-  padding: 1rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-}
-.collapsible-header:focus {
-  outline: 0;
-}
-.collapsible-header i {
-  width: 2rem;
-  font-size: 1.6rem;
-  display: inline-block;
-  text-align: center;
-  margin-right: 1rem;
-}
-
-.keyboard-focused .collapsible-header:focus {
-  background-color: #eee;
-}
-
-.collapsible-body {
-  display: none;
-  border-bottom: 1px solid #ddd;
-  box-sizing: border-box;
-  padding: 2rem;
-}
-
-.sidenav .collapsible,
-.sidenav.fixed .collapsible {
-  border: none;
-  box-shadow: none;
-}
-.sidenav .collapsible li,
-.sidenav.fixed .collapsible li {
-  padding: 0;
-}
-.sidenav .collapsible-header,
-.sidenav.fixed .collapsible-header {
-  background-color: transparent;
-  border: none;
-  line-height: inherit;
-  height: inherit;
-  padding: 0 16px;
-}
-.sidenav .collapsible-header:hover,
-.sidenav.fixed .collapsible-header:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.sidenav .collapsible-header i,
-.sidenav.fixed .collapsible-header i {
-  line-height: inherit;
-}
-.sidenav .collapsible-body,
-.sidenav.fixed .collapsible-body {
-  border: 0;
-  background-color: #fff;
-}
-.sidenav .collapsible-body li a,
-.sidenav.fixed .collapsible-body li a {
-  padding: 0 23.5px 0 31px;
-}
-
-.collapsible.popout {
-  border: none;
-  box-shadow: none;
-}
-.collapsible.popout > li {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin: 0 24px;
-  transition: margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.collapsible.popout > li.active {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  margin: 16px 0;
 }
 
 select:focus {
